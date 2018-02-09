@@ -26,10 +26,12 @@
 %%% PACKAGES
 \usepackage{booktabs} % for much better looking tables
 \usepackage{array} % for better arrays (eg matrices) in maths
-\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/enumerate, etc.)
 \usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
 \usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
 \usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{enumitem} \setenumerate[0]{label=(\alph*)}
 % These packages are all incorporated in the memoir class to one degree or another...
 
 %%% HEADERS & FOOTERS
@@ -63,7 +65,7 @@
 \maketitle
 
 \section{Mark each statement as True or False. Justify each answer.}
-\begin{itemize}
+\begin{enumerate}
 	\item In order to be classified as a statement, a sentence must be true.
 	\subitem False; statements must be either true or false, but not both.
 	
@@ -78,10 +80,10 @@
 	
 	\item In mathematical logic, the word ``or'' has an inclusive meaning.
 	\subitem True; by default, ``or'' is inclusive. There is a seperate operation for ``exclusive or''.
-\end{itemize}
+\end{enumerate}
 
 \section{Mark each statement as True or False. Justify each answer.}
-\begin{itemize}
+\begin{enumerate}
 	\item In an implication $p \implies q$, statement $p$ is referred to as the proposition.
 	\subitem False; $p$ is referred to as the antecedent. The whole implication is a single proposition.
 	
@@ -97,10 +99,10 @@
 	\item The negation of $p \implies q$ is $q \implies p$.
 	\subitem False; True will still imply true and false will still imply false. The negation of implication is ``$p$ and not $q$''.
 	
-\end{itemize}
+\end{enumerate}
 
 \section{Write the negation of each statement}
-\begin{itemize}
+\begin{enumerate}
 	\item$M$ is a cyclic subgroup.
 	\subitem $M$ is not a cyclic subgroup.
 	
@@ -121,10 +123,10 @@
 	
 	\item If $K$ is compact, then $K$ is closed and bounded.
 	\subitem $K$ is compact and $K$ is neither closed or bounded.
-\end{itemize}
+\end{enumerate}
 
 \section{Write the negation of each statement}
-\begin{itemize}
+\begin{enumerate}
 	\item The relation R is transitive.
 	\subitem The relation R is not transitive.
 	
@@ -142,72 +144,171 @@
 	
 	\item If $f$ is continuous, then $f(S)$ is closed and bounded.
 	\subitem $f$ is continuous and $f(S)$ is open or unbounded.
+	
+	\item If $K$ is closed and bounded, then $K$ is compact.
+	\subitem $K$ is closed and bounded and $K$ is not compact.
 
-\end{itemize}
+\end{enumerate}
 
 \section{Identify the antecedent and the consequent in each statement.}
-\begin{itemize}
+\begin{enumerate}
 	\item $M$ has a zero eigenvalue only if $M$ is singular.
-	\subitem Antecedent: $M$ has a zero eigenvalue.\\ Consequent: $M$ is singular.
+	\subitem Antecedent: $M$ has a zero eigenvalue.\subitem Consequent: $M$ is singular.
 	
 	\item Normality is a necessary condition for regularity.
-	\subitem Antecedent: Regularity\\ Consequent: Normality
+	\subitem Antecedent: Regularity\subitem Consequent: Normality
 	
 	\item A sequence is bounded if it is Cauchy.
-	\subitem Antecedent: A sequence is Cauchy.\\ Consequent: It is bounded.
+	\subitem Antecedent: A sequence is Cauchy.\subitem Consequent: It is bounded.
 	
 	\item If $x=5$, then $f(x)=14$.
-	\subitem Antecedent: $x=5$\\ Consequent: $f(x)=14$
-\end{itemize}
+	\subitem Antecedent: $x=5$\subitem Consequent: $f(x)=14$
+\end{enumerate}
 
 \section{Identify the antecedent and the consequent in each statement.}
-\begin{itemize}
+\begin{enumerate}
 	\item$5n$ is odd only if $n$ is odd.
+	\subitem Antecedent: $5n$ is odd.\subitem Consequent: $n$ is odd.
 	\item A sequence is convergent provided that it is monotone and bounded.
+	\subitem Antecedent: A sequence is monotone and bounded.\subitem Consequent: It is convergent.
 	\item A real sequence is Cauchy whenever it is convergent.
+	\subitem Antecedent: A real sequence is convergent.\subitem Consequent: It is Cauchy
 	\item Convergence is a sufficient condition for boundedness.
-\end{itemize}
+	\subitem Antecedent: A sequence is convergent.\subitem Consequent: It is bounded.
+\end{enumerate}
 
 \section{Construct a truth table for each statement.}
-\begin{itemize}
+\begin{enumerate}
 	\item $p \implies \neg q$
+	\begin{center}
+	\begin{tabular}{ |c|c|c|c| }
+	\hline
+	$p$ & $q$ & $\neg q$ & $p \implies \neg q$ \\
+	\hline
+	T & T & F & F \\
+	T & F & T & T \\
+	F & T & F & T \\
+	F & F & T & T \\
+	\hline
+	\end{tabular}
+	\end{center}
 	\item $[p \land (p \implies q)] \implies q$
+	\begin{center}
+	\begin{tabular}{|c|c|c|c|c|}
+	\hline
+	$p$ & $q$ & $p \implies q$ & $p \land (p \implies q)$ & $[p \land (p \implies q)] \implies q$ \\
+	\hline
+	T & T & T & T & T \\
+	T & F & F & F & T \\
+	F & T & T & F & T \\
+	F & F & T & F & T \\
+	\hline
+	\end{tabular}
+	\end{center}
 	\item $[p \implies (q \land \neg q)] \iff \neg p$
-\end{itemize}
+	\begin{center}
+	\begin{tabular}{|c|c|c|c|c|c|c|}
+	\hline
+	$p$ & $q$ & $\neg q$ & $q \land \neg q$ & $p \implies (q \land \neg q)$ & $[p \implies (q \land \neg q)] \iff \neg p$ & $\neg p$ \\
+	\hline
+	T & T & F & F & F & T & F\\
+	T & F & T & F & F & T & F\\
+	F & T & F & F & T & T & T\\
+	F & F & T & F & T & T & T\\
+	\hline
+	\end{tabular}
+	\end{center}
+\end{enumerate}
 
 \section{Construct a truth table for each statement.}
-\begin{itemize}
+\begin{enumerate}
 	\item $\neg p \lor q$
+	\begin{center}
+	\begin{tabular}{|c|c|c|c|}
+	\hline
+	$p$ & $q$ & $\neg p$ & $\neg p \lor q$\\
+	\hline
+	T & T & F & T\\
+	T & F & F & F\\
+	F & T & T & T\\
+	F & F & T & T\\
+	\hline
+	\end{tabular}
+	\end{center}
 	\item $p \land \neg q$
+	\begin{center}
+	\begin{tabular}{|c|c|c|c|}
+	\hline
+	$p$ & $q$ & $\neg q$ & $p \land \neg q$\\
+	\hline
+	T & T & F & F\\
+	T & F & T & T\\
+	F & T & F & F\\
+	F & F & T & F\\
+	\hline
+	\end{tabular}
+	\end{center}
 	\item $[\neg q \land (p \implies q)] \implies \neg p$
-\end{itemize}
+	\begin{center}
+	\begin{tabular}{|c|c|c|c|c|c|c|}
+	\hline
+	$p$ & $q$ & $\neg q$ & $p \implies q$ & $\neg q \land (p \implies q)$ & $\neg p$ & $[\neg q \land (p \implies q)] \implies \neg p$\\
+	\hline
+	T & T & F & T & F & F & T\\
+	T & F & T & F & F & F & T\\
+	F & T & F & T & F & T & T\\
+	F & F & T & T & T & F & F\\
+	\hline
+	\end{tabular}
+	\end{center}
+\end{enumerate}
 
 \section{Indicate whether each statement is True or False.}
-\begin{itemize}
+\begin{enumerate}
 	\item $2 \leq 3$ and 7 is prime.
+	\subitem True
 	\item $6+2=8$ or 6 is prime.
+	\subitem True
 	\item 5 is not prime or 8 is prime.
+	\subitem False
 	\item If 3 is prime, then $3^2=9$.
+	\subitem True
 	\item If 3 is not prime, then $3^2 \neq 9$.
+	\subitem True
 	\item If $3^2 = 9$, then 3 is not prime.
+	\subitem False
 	\item If 6 is even or 4 is odd, then 6 is prime.
+	\subitem False
 	\item If $2<3$ implies that $4>5$, then 8 is prime.
+	\subitem True
 	\item If both $2+5=7$ and $2\cdot5=7$, then $2^2 + 5^2 = 7^2$.
+	\subitem True
 	\item It is not the case that $2+3\neq5$.
-\end{itemize}
+	\subitem True
+\end{enumerate}
 
 \section{Indicate whether each statement is True or False.}
-\begin{itemize}
+\begin{enumerate}
 	\item 5 is odd and 3 is even.
+	\subitem False
 	\item 5 is odd or 3 is even.
+	\subitem True
 	\item 6 is prime or 8 is odd.
+	\subitem False
 	\item If 7 is odd, then $7+7=10$.
+	\subitem False
 	\item If $2+2=5$, then 5 is prime.
+	\subitem True
 	\item If $4>5$, then 5 is even.
+	\subitem True
 	\item If 5 is odd and 6 is prime, then $5+6=11$.
+	\subitem True
 	\item If $5\leq3$ only if 3 is odd, then 5 is even.
+	\subitem True
 	\item If both $2+5=7$ and $2\cdot5=10$, then $2^2+5^2=10^2$.
+	\subitem False
 	\item It is not the case that 4 is even and 7 is not prime.
-\end{itemize}
+	\subitem True
+\end{enumerate}
 
 \end{document}
