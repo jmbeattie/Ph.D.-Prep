@@ -32,6 +32,7 @@
 \usepackage{amsmath}
 \usepackage{multirow}
 \usepackage{enumitem} \setenumerate[0]{label=(\alph*)}
+\usepackage{amssymb}
 % These packages are all incorporated in the memoir class to one degree or another...
 
 %%% HEADERS & FOOTERS
@@ -309,6 +310,53 @@
 	\subitem False
 	\item It is not the case that 4 is even and 7 is not prime.
 	\subitem True
+\end{enumerate}
+
+\section{Let $p$ be the statement ``Misty is a dog,'' and let $q$ be the statement ``Misty is a cat.'' Express each of the following statements in symbols.}
+\begin{enumerate}
+\item Misty is not a cat, but she is a dog.
+\item Misty is a dog or a cat, but not both.
+\item Misty is a dog or a cat, but she is not a cat.
+\item If Misty is not a dog, then Misty is a cat.
+\item Misty is a dog iff she is not a cat.
+\end{enumerate}
+
+\section{Let $p$ be the statement ``Buford got a C on the exam,'' and let $q$ be the statement ``Buford passed the class.'' Express each of the following statements in symbols.}
+\begin{enumerate}
+\item Buford did not get a C on the exam, but he passed the class.
+\item Buford got neither a C on the exam nor did he pass the class.
+\item If Buford passed the class, he did not get a C on the exam.
+\item It was necessary for Buford to get a C on the exam in order for him to pass the class.
+\item Buford passed the class only if he got a C on the exam.
+\end{enumerate}
+
+\section{Define a new sentential connective $\triangledown$, called \textit{nor}, by the following truth table.}
+	\begin{center}
+	\begin{tabular}{|c|c|c|}
+	\hline
+	$p$ & $q$ & $p \triangledown q$\\
+	\hline
+	T & T & F\\
+	T & F & F\\
+	F & T & F\\
+	F & F & T\\
+	\hline
+	\end{tabular}
+	\end{center}
+	\begin{enumerate}
+	\item Use a truth table to show that $p \triangledown p$ is logically equivalent to $\neg p$.
+	\item Complete a truth table for $(p \triangledown p) \triangledown (q \triangledown q)$.
+	\item Which of our basic connectives ($p\land q$, $p\lor q$, $p\implies q$, $p\iff q$) is logically equivalent to $(p \triangledown p) \triangledown (q \triangledown q)$?
+	\end{enumerate}
+	
+\section{Use truth tables to verify that each of the following is a tautology. Parts (a) and (b) are called \textit{commutative laws}, parts (c) and (d) are \textit{associative laws}, and parts (e) and (f) are \textit{distributive laws}.}
+\begin{enumerate}
+	\item $(p \land q) \iff (q \land p)$
+	\item $(p \lor q) \iff (q \lor p)$
+	\item $[p \land (q \land r)] \iff [(p\land q) \land r]$
+	\item $[p \lor (q \lor r)] \iff [(p\lor q) \lor r]$
+	\item $[p \land (q \lor r)] \iff [(p\land q)\lor(p\land r)]$
+	\item $[p \lor (q \land r)] \iff [(p\lor q)\land(p\lor r)]$
 \end{enumerate}
 
 \end{document}
