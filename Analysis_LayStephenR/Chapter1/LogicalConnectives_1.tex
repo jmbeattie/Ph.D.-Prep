@@ -315,19 +315,29 @@
 \section{Let $p$ be the statement ``Misty is a dog,'' and let $q$ be the statement ``Misty is a cat.'' Express each of the following statements in symbols.}
 \begin{enumerate}
 \item Misty is not a cat, but she is a dog.
+\subitem $\neg q \land p$
 \item Misty is a dog or a cat, but not both.
+\subitem $(p \lor q) \land \neg(p \land q)$ 
 \item Misty is a dog or a cat, but she is not a cat.
+\subitem $(p \lor q) \land \neg q$
 \item If Misty is not a dog, then Misty is a cat.
+\subitem $\neg p \implies q$
 \item Misty is a dog iff she is not a cat.
+\subitem $p \iff \neg q$
 \end{enumerate}
 
 \section{Let $p$ be the statement ``Buford got a C on the exam,'' and let $q$ be the statement ``Buford passed the class.'' Express each of the following statements in symbols.}
 \begin{enumerate}
 \item Buford did not get a C on the exam, but he passed the class.
+\subitem $\neg p \land q$
 \item Buford got neither a C on the exam nor did he pass the class.
+\subitem $\neg(p \lor q)$
 \item If Buford passed the class, he did not get a C on the exam.
+\subitem $q \implies \neg p$
 \item It was necessary for Buford to get a C on the exam in order for him to pass the class.
+\subitem $q \implies p$
 \item Buford passed the class only if he got a C on the exam.
+\subitem $q \implies p$
 \end{enumerate}
 
 \section{Define a new sentential connective $\triangledown$, called \textit{nor}, by the following truth table.}
@@ -345,18 +355,131 @@
 	\end{center}
 	\begin{enumerate}
 	\item Use a truth table to show that $p \triangledown p$ is logically equivalent to $\neg p$.
+	\begin{center}
+	\begin{tabular}{|c|c|c|}
+	\hline
+	$p$ & $\neg p$ & $p\triangledown p$\\
+	\hline
+	T & F & F\\
+	F & T & T\\
+	\hline
+	\end{tabular}
+	\end{center}
 	\item Complete a truth table for $(p \triangledown p) \triangledown (q \triangledown q)$.
+	\begin{center}
+	\begin{tabular}{|c|c|c|c|c|}
+	\hline
+	$p$ & $q$ & $(p \triangledown p)$ & $(q \triangledown q)$ & $(p \triangledown p) \triangledown (q \triangledown q)$\\
+	\hline
+	T & T & F & F & T\\
+	T & F & F & T & F\\
+	F & T & T & F & F\\
+	F & F & T & T & F\\
+	\hline
+	\end{tabular}
+	\end{center}
 	\item Which of our basic connectives ($p\land q$, $p\lor q$, $p\implies q$, $p\iff q$) is logically equivalent to $(p \triangledown p) \triangledown (q \triangledown q)$?
+	\subitem It is logically equivalent to $p \land q$.
 	\end{enumerate}
 	
 \section{Use truth tables to verify that each of the following is a tautology. Parts (a) and (b) are called \textit{commutative laws}, parts (c) and (d) are \textit{associative laws}, and parts (e) and (f) are \textit{distributive laws}.}
 \begin{enumerate}
 	\item $(p \land q) \iff (q \land p)$
+	\begin{center}
+	\begin{tabular}{|c|c|c|c|c|}
+	\hline
+	$p$ & $q$ & $p \land q$ & $(p \land q) \iff (q \land p)$ & $q \land p$\\
+	\hline
+	T & T & T & T & T\\
+	T & F & F & T & F\\
+	F & T & F & T & F\\
+	F & F & F & T & F\\
+	\hline
+	\end{tabular}
+	\end{center}
 	\item $(p \lor q) \iff (q \lor p)$
+	\begin{center}
+	\begin{tabular}{|c|c|c|c|c|}
+	\hline
+	$p$ & $q$ & $p \lor q$ & $(p \lor q) \iff (q \lor p)$ & $q \lor p$\\
+	\hline
+	T & T & T & T & T\\
+	T & F & T & T & T\\
+	F & T & T & T & T\\
+	F & F & F & T & F\\
+	\hline
+	\end{tabular}
+	\end{center}
 	\item $[p \land (q \land r)] \iff [(p\land q) \land r]$
+	\begin{center}
+	\begin{tabular}{|c|c|c|c|c|c|c|c|}
+	\hline
+	$p$ & $q$ & $r$ & $q \land r$ & $p \land (q \land r)$ & $[p \land (q \land r)] \iff [(p\land q) \land r]$ & $(p\land q) \land r$ & $p \land q$\\
+	\hline
+	T & T & T & T & T & T & T & T\\
+	T & T & F & F & F & T & F & T\\
+	T & F & T & F & F & T & F & F\\
+	T & F & F & F & F & T & F & F\\
+	F & T & T & T & F & T & F & F\\
+	F & T & F & F & F & T & F & F\\
+	F & F & T & F & F & T & F & F\\
+	F & F & F & F & F & T & F & F\\
+	\hline
+	\end{tabular}
+	\end{center}
 	\item $[p \lor (q \lor r)] \iff [(p\lor q) \lor r]$
+	\begin{center}
+	\begin{tabular}{|c|c|c|c|c|c|c|c|}
+	\hline
+	$p$ & $q$ & $r$ & $q \lor r$ & $p \lor (q \lor r)$ & $[p \lor (q \lor r)] \iff [(p\lor q) \lor r]$ & $(p\lor q) \lor r$ & $p \lor q$\\
+	\hline
+	T & T & T & T & T & T & T & T\\
+	T & T & F & T & T & T & T & T\\
+	T & F & T & T & T & T & T & T\\
+	T & F & F & F & T & T & T & T\\
+	F & T & T & T & T & T & T & T\\
+	F & T & F & T & T & T & T & T\\
+	F & F & T & T & T & T & T & F\\
+	F & F & F & F & F & T & F & F\\
+	\hline
+	\end{tabular}
+	\end{center}
 	\item $[p \land (q \lor r)] \iff [(p\land q)\lor(p\land r)]$
+	\begin{center}
+	\hspace*{-2cm}
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+	\hline
+	$p$ & $q$ & $r$ & $q \lor r$ & $p \land (q\lor r)$ & $[p \land (q \lor r)] \iff [(p\land q)\lor(p\land r)]$ & $(p\land q)\lor(p\land r)$ & $p\land q$ & $p\land r$\\
+	\hline
+	T & T & T & T & T & T & T & T & T\\
+	T & T & F & T & T & T & T & T & F\\
+	T & F & T & T & T & T & T & F & T\\
+	T & F & F & F & F & T & F & F & F\\
+	F & T & T & T & F & T & F & F & F\\
+	F & T & F & T & F & T & F & F & F\\
+	F & F & T & T & F & T & F & F & F\\
+	F & F & F & F & F & T & F & F & F\\
+	\hline
+	\end{tabular}
+	\end{center}
 	\item $[p \lor (q \land r)] \iff [(p\lor q)\land(p\lor r)]$
+	\begin{center}
+	\hspace*{-2cm}
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+	\hline
+	$p$ & $q$ & $r$ & $q \land r$ & $p \lor (q\land r)$ & $[p \lor (q \land r)] \iff [(p\lor q)\land(p\lor r)]$ & $(p\lor q)\land(p\lor r)$ & $p\lor q$ & $p\lor r$\\
+	\hline
+	T & T & T & T & T & T & T & T & T\\
+	T & T & F & F & T & T & T & T & T\\
+	T & F & T & F & T & T & T & T & T\\
+	T & F & F & F & T & T & T & T & T\\
+	F & T & T & T & T & T & T & T & T\\
+	F & T & F & F & F & T & F & T & F\\
+	F & F & T & F & F & T & F & F & T\\
+	F & F & F & F & F & T & F & F & F\\
+	\hline
+	\end{tabular}
+	\end{center}
 \end{enumerate}
 
 \end{document}
