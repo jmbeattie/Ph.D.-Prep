@@ -43,7 +43,7 @@
 
 %%% SECTION TITLE APPEARANCE
 \usepackage{sectsty}
-\allsectionsfont{\large\upshape} % (See the fntguide.pdf for font help)
+\allsectionsfont{\normalfont\large\sffamily} % (See the fntguide.pdf for font help)
 % (This matches ConTeXt defaults)
 
 %%% ToC (table of contents) APPEARANCE
@@ -65,5 +65,48 @@
 \maketitle
 
 \section{Mark each statement as True or False. Justify each answer.}
+\begin{enumerate}
+\item The symbol ``$\forall$'' means ``for every''.
+\item The negation of a universal statement is another universal statement.
+\item The symbol ``$\ni$'' is read ``such that''.
+\end{enumerate}
+
+\section{Mark each statement True or False. Justify each answer.}
+\begin{enumerate}
+\item The symbol ``$\exists$'' means ``there exist several''.
+\item If a variable is used in the antecedent of an implication without being quantified, then the universal quantifier is assumed to apply.
+\item The order in which quantifiers are used affects the truth value.
+\end{enumerate}
+
+\section{Write the negation of each statement.}
+\begin{enumerate}
+\item All the roads in Yellowstone are open.
+\item Some fish are green.
+\item No even integer is prime.
+\item $\exists x<3\ni x^2 \geq 10$.
+\item $\forall x$ in $A, \exists y <k \ni 0 <f(y)<f(x)$
+\item If $n>N$, then $\forall x$ in $S$, $\mid f_n(x)-f(x)\mid<\epsilon$.
+\end{enumerate}
+
+\section{Write the negation of each statement.}
+\begin{enumerate}
+\item Some basketball players at Central High are short.
+\item All of the lights are on.
+\item No bounded interval contains infinitely many integers.
+\item $\exists x$ in $S \ni x \geq 5$.
+\item $\forall x \ni 0 <x<1, f(x)<2$ or $ f(x)>5$.
+\item If $x>5$, then $\exists y>0\ni x^2>25+y$.
+\end{enumerate}
+
+\section{Determine the truth value of each statement, assuming that $x,y$, and $z$ are real numbers.}
+\begin{enumerate}
+\item $\exists x\ni\forall y \exists z\ni x+y=z$.
+\item $\exists x \ni\forall y$ and $\forall z, x+y=z$.
+\item $\forall x$ and $\forall y,\exists z \ni y-z=x$.
+\item $\forall x$ and $\forall y,\exists z \ni xz=y$.
+\item $\exists x \ni \forall y$ and $\forall z, z>y$ implies that $z>x+y$.
+\item $\forall x, \exists y$ and $\exists z \ni z>y$ implies that $z>x+y$.
+\end{enumerate}
+
 
 \end{document}
