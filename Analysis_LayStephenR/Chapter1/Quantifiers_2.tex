@@ -178,26 +178,68 @@ For each statement below, indicate which strategy is more appropriate.}
 \section{Determine the truth value of each statement, assuming $x$ is a real number.}
 \begin{enumerate}
 \item $\exists x$ in $\left[ 2,4 \right] \ni x<7$.
+\subitem True
 \item $\forall x$ in $\left[ 2,4 \right], x<7$.
+\subitem True
 \item $\exists x \ni x^2=5$.
+\subitem True
 \item $\forall x, x^2=5$.
+\subitem False
 \item $\exists x \ni x^2 \neq -3$.
+\subitem True
 \item $\forall x, x^2 \neq -3$.
+\subitem True
 \item $\exists x \ni x \div x = 1$.
+\subitem True
 \item $\forall x, x \div x = 1$.
+\subitem False
 \end{enumerate}
 
 \section{Determine the truth value of each statement, assuming $x$ is a real number.}
 \begin{enumerate}
 \item $\exists x$ in $\left[ 3,5 \right]\ni x\geq4$.
+\subitem True
 \item $\forall x$ in $\left[ 3,5 \right], x\geq4$.
+\subitem False
 \item $\exists x \ni x^2 \neq 3$.
+\subitem True
 \item $\forall x, x^2 \neq 3$.
+\subitem False
 \item $\exists x \ni x^2 = -5$.
+\subitem False
 \item $\forall x, x^2 = -5$.
+\subitem False
 \item $\exists x \ni x-x=0$.
+\subitem True
 \item $\forall x, x-x=0$.
+\subitem True
 \end{enumerate}
+\noindent
+Exercises 2.11 to 2.19 give certain properties of functions that we shall encounter later in the text. You are to do two things: (a) rewrite the defining conditions in logical symbolism using $\forall$, $\exists$, $\ni$, and $\implies$ as appropriate; and (b) write the negation of part (a) using the same symbolism. It is not necessary that you understand precisely what each term means.
+\begin{center}
+\textit{Example:} A function $f$ is odd iff for every $x$, $f(-x)=-f(x)$.
+\end{center}
+%\begin{enumerate}
+\hspace*{4cm}(a) defining condition: $\forall x, f(-x)=-f(x)$.\\
+\hspace*{4cm}(b) negation: $\exists x \ni f(-x)\neq-f(x)$.
+%\end{enumerate}
 
+\section{A function $f$ is \textit{even} if for every $x$, $f(-x)=f(x)$.}
+
+\section{A function $f$ is \textit{periodic} iff there exists a $k>0$ such that for every $x$, $f(x+k)=f(x)$.}
+
+\section{A function $f$ is \textit{increasing} iff for every $x$ and for every $y$, if $x\leq y$, then $f(x)\leq f(y)$.}
+
+\section{A function $f$ is \textit{strictly decreasing} iff for every $x$ and for every $y$, if $x<y$, then $f(x)>f(y)$.}
+
+\section{A function $f$ is \textit{injective} iff for every $x$ and $y$ in $A$, if $f(x)=f(y)$, then $x=y$.}
+
+\section{A function $f:A\rightarrow B$ is \textit{surjective} iff for every $y$ in $B$ there exists an $x$ in $A$ such that $f(x)=y$.}
+
+\section{A function $f:D\rightarrow R$ is \textit{continuous} at $c \in D$ iff for every $\epsilon>0$ there is a $\delta>0$ such that $\mid f(x)-f(y)\mid<\epsilon$ whenever $\mid x-c\mid<\delta$ and $x\in D$.}
+
+\section{A function $f$ is \textit{uniformly continuous on a set $S$} iff for every $\epsilon>0$ there is a $\delta>0$ such that $\mid f(x)-f(y)\mid<\epsilon$ whenever $x$ and $y$ are in $S$ and $\mid x-y\mid<\delta$.}
+
+\section{The real number $L$ is the \textit{limit} of the function $f:D\rightarrow R$ at the point $c$ iff for each $\epsilon>0$ there exists a $\delta>0$ such that $\mid f(x)-L\mid<\epsilon$ whenever $x\in D$ and $0<\mid x-c\mid<\delta$.}
 
 \end{document}
